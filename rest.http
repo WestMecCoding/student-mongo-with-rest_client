@@ -26,11 +26,19 @@ Content-Type: application/json
 DELETE {{domain}}:{{port}}/delete/{{database}}/{{collection}}/{{id}}
 Content-Type: application/json
 
+###
+POST {{domain}}:{{port}}/insert/{{database}}/{{collection}}
 Content-Type: application/json
 
 {
-  "update": {
-    "price_in_usd": 0.25,
-    "quantity": 200
+  "documents": [
+    {
+"name": "Jimmy",
+"age": 106
+  },
+  {
+"brand": "Nokia",
+"cost":753
   }
+  ]
 }

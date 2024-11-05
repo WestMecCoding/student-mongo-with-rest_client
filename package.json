@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently -n \"REPL,WS\" -c \"blue,green\" -k -r \"nodemon --watch . replSetup.js\" \"nodemon --watch . ws-server.js\" --handle-input",
     "ws": "nodemon --watch . ws-server.js",
-    "repl": "nodemon --watch . replSetup.js"
+    "repl": "node replSetup.js"
   },
   "keywords": [],
   "author": "",

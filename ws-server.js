@@ -63,10 +63,12 @@ app.get("/find/:database/:collection", async (req, res) => {
 // Create (Insert) endpoint
 app.post("/insert/:database/:collection", async (req, res) => {
       try {
-        const { document } = req.body;
+        const { documents } = req.body;
         const { database, collection } = req.params;
         const db = client.db(database);
-        const result = await db.collection(collection).insertOne(document);
+        const result = await db.collection(collection).insertMany(documents);
+
+        // const result = await db.collection(collection).insertOne(document);
         res.status(201).send(`Document inserted with ID: ${result.insertedId}`);
     } catch (err) {
         res.status(500).json({ error: err.message });
